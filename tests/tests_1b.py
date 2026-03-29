@@ -20,14 +20,14 @@ def test_subtraction():
 
 def test_multiplication():
     assert simple_calculator("multiply", 5, 3) == 15    # Test for positive numbers
-    assert simple_calculator("multiply", -2, 2) == -4   # Test for negative and positive number
-    assert simple_calculator("multiply", 0, 100) == 0   # Test for multiplication by zero
-    assert simple_calculator("multiply", 75689, 4) == 302756      # Test for larger numbers
+    assert simple_calculator("multiply", -2, 2) == -4   # Tests negative/positive num
+    assert simple_calculator("multiply", 0, 100) == 0   # Tests multiplication by zero
+    assert simple_calculator("multiply", 75689, 4) == 302756  # Tests larger numbers
 
 def test_division():
     assert simple_calculator("divide", 6, 3) == 2       # Test for positive numbers
-    assert simple_calculator("divide", -4, 2) == -2     # Test for negative and positive number
-    assert simple_calculator("divide", 5, 2) == 2.5     # Test for division resulting in float
+    assert simple_calculator("divide", -4, 2) == -2     # Tests negative/positive num
+    assert simple_calculator("divide", 5, 2) == 2.5     # Tests division -> float
 
 def test_division_by_zero():
     with pytest.raises(ValueError, match="Cannot divide by zero."):
