@@ -32,7 +32,7 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         return num1 - num2
     elif operation == "multiply":
         return num1 * num2
-    elif operation == "divide":
+    else:
         if num2 != 0:
             return num1 / num2
         else:
