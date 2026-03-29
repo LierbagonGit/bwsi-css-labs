@@ -29,12 +29,17 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
         return num1 - num2
     elif operation == "multiply":
         return num1 * num2
-    else:
-        if num2 != 0:
-            return num1 / num2
-        else:
+    elif operation == "divide":
+        if num2 == 0:
             raise ValueError("Cannot divide by zero.")
+        else:
+            return num1 / num2
+    else:
+        raise ValueError(
+        "Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'."
+        )
 
+        
 def main():
     
     print(f"===== Simple Calculator =====")
@@ -57,9 +62,9 @@ def main():
         if operation in ("add", "subtract", "multiply"):
             break
         elif operation == "divide":
-            operation = "divid" # Avoids the result saying "divideing", it is sloppy but it's simple and it works
             break
-        print('Must be either "add", "subtract", "multiply", or "divide"')
+        else:
+            print('Must be either "add", "subtract", "multiply", or "divide"')
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
